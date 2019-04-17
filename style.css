@@ -1,0 +1,27 @@
+body {background-color:white;font-family:"Palatino","Hiragino Mincho Pro","MS PMincho", FreeSerif,serif;line-height:1.5;}
+a {text-decoration:none;}
+.unpath a{color:black;}
+#banner {text-align:center;padding-top:2em;font-size:2em;font-weight:bold;position:absolute;width:95%;margin:auto;}
+#banner a{color:black;}
+#toggle {display:none;}
+#nav {margin-top:12em;width:12em;float:left;}
+#nav ul{list-style-type:none;padding-left:1em;}
+#nav a{font-size:1.15em;display:block;padding-top:0.3em;padding-bottom:0.3em;}
+#main {padding-top:12em;margin:auto;max-width:48em;}
+#main p{text-align:justify;word-wrap:break-word;}
+#main li{padding-bottom:0.5em;}
+#main h3{font-size:150%;margin-bottom:0.5em;}
+#main h4{margin-top:1.5em;margin-bottom:0.5em;font-size:125%;}
+#main img{margin:1em;height:auto;width:auto;max-width:95%;border-style:none;position:relative;}
+pre{overflow-wrap:normal;font-family:monospace;font-size:0.9em;border:1px dotted silver;padding:.5em;text-align:left;overflow-x:scroll;}
+.kanji{display:inline-block;margin-bottom:1mm;padding:1mm;}
+@media screen and (max-device-width:736px) {html{-webkit-text-size-adjust:100%;}
+#banner h1{padding-top:1em;}
+#toggle {display:block;padding-left:0.5em;font-variant:small-caps;}
+#toggle a {color:black;}
+.expand {display:none;}
+.expand:target {display:block;}
+#nav {margin-top:0em;float:none;width:95%;padding-left:1em;}
+#main {font-size:0.95em;padding-left:0.5em;padding-right:0.5em;}
+#main img{display:block;margin:0 auto;}
+#main p{text-align:left;}}

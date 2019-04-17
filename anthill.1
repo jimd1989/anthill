@@ -1,0 +1,103 @@
+.Dd $Mdocdate$
+.Dt anthill 1
+.Os
+.Sh NAME
+.Nm anthill
+.Nd static site generator
+.Sh SYNOPSIS
+.Nm anthill 
+.Op -option "value" ...
+.Sh DESCRIPTION
+.Pp
+anthill takes a directory tree of input files, formatted as Markdown, and returns a tree of HTML output, with navigation automatically rendered into each file as nested <ul> elements.
+.Pp
+All options are paired with a single string as their parameter.
+.Bl -tag -width Ds
+.It Fl css
+Link to the URL of the CSS file that will style the site.
+.El
+.Bl -tag -width Ds
+.It Fl delimiter
+The text that will appear between the site name and page name in the banner.
+.El
+.Bl -tag -width Ds
+.It Fl hidden
+The navigation bar can be hidden behind a button. This is the text that appears on that button.
+.El
+.Bl -tag -width Ds
+.It Fl inline-css
+The local CSS file that will be inlined directly into the header. Overrules the -css parameter.
+.El
+.Bl -tag -width Ds
+.It Fl input
+The root directory containing the main content of the site, formatted as Markdown. Will default to current directory.
+.El
+.Bl -tag -width Ds
+.It Fl markdown
+Alternative markdown command. Can be path to a different markdown executable, or invocation with certain paramerters, etc. Must contain the markdown command itself (ie -markdown "markdown -F 0x4").
+.El
+.Bl -tag -width Ds
+.It Fl minify
+Removes all newlines from output, increasing transfer speed. Whitespace within <code> is still honored. The parameter to this option can technically be anything; both -minify "yes" and -minify "no" will have the same effect. Simply don't use this option if you wish to preserve newlines.
+.El
+.Bl -tag -width Ds
+.It Fl name
+The site's name, visible in the banner at the top of every page.
+.El
+.Bl -tag -width Ds
+.It Fl output
+The directory root of the HTML output. Will default to /tmp/anthill-output.
+.El
+.Bl -tag -width Ds
+.It Fl url
+The root URL for the section of the website served by anthill. Will default to the local filesystem.
+.El
+.Pp
+Anthill exposes a few CSS elements to the user, which may be styled however one wishes:
+.Pp
+.Bl -tag -width Ds
+.It #banner
+The banner at the top of the site.
+.El
+.Bl -tag -width Ds
+.It #delimiter
+The delimiter text in the banner.
+.El
+.Bl -tag -width Ds
+.It .expand
+Often used in conjunction with {display:none;} and expand:target{display:block;} to hide the navigation bar behind a button.
+.El
+.Bl -tag -width Ds
+.It #main
+Where the contents of a page reside.
+.El
+.Bl -tag -width Ds
+.It #nav
+The navigation <ul> tree.
+.El
+.Bl -tag -width Ds
+.It #pagename
+The page name in the banner.
+.El
+.Bl -tag -width Ds
+.It .path
+Navigation items within the active path.
+.El
+.Bl -tag -width Ds
+.It #sitename
+The site name in the banner.
+.El
+.Bl -tag -width Ds
+.It #toggle
+The element that shows/hides the navigation tree.
+.El
+.Bl -tag -width Ds
+.It .unpath
+Navigation elements that do not reside in the active path.
+.El
+.Sh HISTORY
+anthill was originally written in January 2014 and has been sporadically updated with massive, feature-breaking rewrites every year or so. This documentation only holds true for the most recent version.
+.Sh AUTHORS
+Written by Jim Dalrymple. https://dalrym.pl
+.Sh CAVEATS
+anthill is only tested to work with the Discount implementation of Markdown. If your markdown command points to a different version, you may experience errors.
